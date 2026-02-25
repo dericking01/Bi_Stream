@@ -8,7 +8,7 @@ def start():
     scheduler.add_job(
         lambda: run_all(REPORTS),
         "cron",
-        minute="*/15"
+        minute="*/15",  # Every 15 minutes
     )
 
     scheduler.start()

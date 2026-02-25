@@ -1,7 +1,7 @@
 services:
-  bot_engine:
+  bi_stream_engine:
     build: .
-    container_name: bot_engine
+    container_name: bi_stream_engine
     restart: always
     env_file:
       - .env
