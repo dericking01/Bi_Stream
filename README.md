@@ -101,7 +101,7 @@ docker compose up -d --build
 5. Watch the logs
 
 ```bash
-docker logs -f bot_engine
+docker logs -f bi_stream_engine
 ```
 
 ---
