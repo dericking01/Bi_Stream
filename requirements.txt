@@ -1,0 +1,6 @@
+psycopg2-binary
+gspread
+google-auth
+python-dotenv
+APScheduler
+pytz

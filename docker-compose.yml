@@ -1,0 +1,9 @@
+services:
+  bot_engine:
+    build: .
+    container_name: bot_engine
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - .:/app
