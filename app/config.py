@@ -5,7 +5,8 @@ REPORTS = [
         "worksheet": "Sheet1",
         "sql_file": "reports/payment_type_sheet1.sql",
         "data_columns": 4,
-        "mode": "incremental"
+        "mode": "upsert",
+        "key_columns": 2
     },
     {
         "name": "PaymentType_Sheet2",
@@ -13,7 +14,8 @@ REPORTS = [
         "worksheet": "Sheet2",
         "sql_file": "reports/payment_type_sheet2.sql",
         "data_columns": 4,
-        "mode": "incremental"
+        "mode": "upsert",
+        "key_columns": 2
     },
     {
         "name": "Analysis2_Main",
@@ -21,7 +23,8 @@ REPORTS = [
         "worksheet": "Analysis 2.csv",
         "sql_file": "reports/analysis2_main.sql",
         "data_columns": 10,
-        "mode": "incremental"
+        "mode": "upsert",
+        "key_columns": 2
     },
     {
         "name": "Analysis2_Engagement",
@@ -29,7 +32,8 @@ REPORTS = [
         "worksheet": "Engagement",
         "sql_file": "reports/analysis2_engagement.sql",
         "data_columns": 3,
-        "mode": "replace_today"
+        "mode": "upsert",
+        "key_columns": 1
     },
     {
         "name": "OverallAnalysis_Sheet1",
@@ -37,7 +41,8 @@ REPORTS = [
         "worksheet": "Sheet1",
         "sql_file": "reports/overall_analysis_sheet1.sql",
         "data_columns": 9,
-        "mode": "incremental"
+        "mode": "upsert",
+        "key_columns": 1
     },
     {
         "name": "OverallAnalysis_Sheet3",
@@ -45,6 +50,7 @@ REPORTS = [
         "worksheet": "Sheet3",
         "sql_file": "reports/overall_analysis_sheet3.sql",
         "data_columns": 4,
-        "mode": "incremental"
+        "mode": "upsert",
+        "key_columns": 3
     }
 ]

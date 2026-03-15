@@ -1,7 +1,6 @@
 import time
-from datetime import datetime
 from app.db import execute_query
-from app.sheets import append_data, replace_today_data
+from app.sheets import upsert_rows
 from app.state_manager import get_last_execution, update_last_execution
 from app.logger import get_logger
 
@@ -23,23 +22,17 @@ def run_report(report):
         logger.info("No new data. Skipping.")
         return
 
-    if report["mode"] == "incremental":
-        append_data(
+    if report["mode"] == "upsert":
+        upsert_rows(
             report["spreadsheet"],
             report["worksheet"],
             rows,
             report["data_columns"],
+            report["key_columns"],
             logger
         )
-
-    elif report["mode"] == "replace_today":
-        replace_today_data(
-            report["spreadsheet"],
-            report["worksheet"],
-            rows,
-            report["data_columns"],
-            logger
-        )
+    else:
+        raise ValueError(f"Unsupported report mode: {report['mode']}")
 
     update_last_execution(report["name"])
     logger.info(f"{report['name']} completed")
